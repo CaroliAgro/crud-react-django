@@ -1,0 +1,52 @@
+.App {
+  padding: 20px;
+  min-height: 100vh;
+  color:  #282c34;
+}
+
+
+.App-header {
+  text-align: center;
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px
+}
+
+.orange{
+  color: orange
+}
+
+.purple{
+  color: purple;
+}
+
+
+.rate-container{
+  border-top: 2px solid purple;
+}
+
+.rate-container .fa-skull { 
+  font-size: 1.8rem;
+  cursor: pointer;
+
+}
+
+.product-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+}
+
+.product-item svg {
+  font-size: 1.2rem;
+  margin: 16px 5px;
+}
