@@ -38,10 +38,11 @@ $ npm install react-router-dom
 
 ## 💻 API Endpoints
 
+#### Registrando um usuário
 
 - **endpoint:** `/users/register/`
 - **method:** `POST`
-- **params:** 
+ 
 ```json
 {
 "email": "LE@gmail.com",
@@ -61,7 +62,7 @@ $ npm install react-router-dom
 
 - **endpoint:** `/api-token-auth/`
 - **method:** `POST`
-- **params:** Em Headers passar : Content-Type application/json
+- **params:** Em headers passar: Content-Type application/json
 
 ```json
    {
@@ -82,7 +83,7 @@ $ npm install react-router-dom
 
 - **endpoint:** `/api/products/`
 - **method:** `POST`
-- **params:** Em Headers Authorization Token **seutoken**,  Content-Type application/json
+- **params:** Em headers passat: Authorization Token **seutoken**,  Content-Type application/json
 
 ```json
    {
@@ -106,7 +107,7 @@ $ npm install react-router-dom
 
 - **endpoint:** `/api/products/`
 - **method:** `GET`
-- **params:** Em Headers Authorization Token **seutoken**
+- **params:** Em headers passar: Authorization Token **seutoken**
 - **200 Response:**
 ```json
     {
@@ -131,7 +132,7 @@ $ npm install react-router-dom
 
 - **endpoint:** `/api/products/1/`
 - **method:** `PUT`
-- **params:** Em Headers Authorization Token **seutoken**,  Content-Type application/json
+- **params:** Em headers passar: Authorization Token **seutoken**,  Content-Type application/json
 
 ```json
    {
@@ -157,7 +158,7 @@ $ npm install react-router-dom
 
 - **endpoint:** `/api/products/1/`
 - **method:** `DELETE`
-- **params:** Em Headers Authorization Token **seutoken**
+- **params:** Em headers passar: Authorization Token **seutoken**
 
 
 
