@@ -24,6 +24,30 @@ export class API {
         },
         body: JSON.stringify(body)
       }).then(resp => resp.json())
+         
+  }
+
+  static deleteProduct(prod_id) {
+    return fetch(
+      `http://localhost:8000/api/products/${prod_id}/`, {
+        method:'DELETE',
+        headers:{
+          'Content-Type':'application/json',
+          'Authorization': `Token ${TOKEN}`
+        },
+        
+      })  
+  }
+  static loginUser(body) {
+    return fetch(
+      `http://localhost:8000/api-token-auth/`, {
+        method:'POST',
+        headers:{
+          'Content-Type':'application/json',
+          
+        },
+        body: JSON.stringify(body)
+      }).then(resp => resp.json())
       
       
   }

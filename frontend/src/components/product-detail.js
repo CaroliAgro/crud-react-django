@@ -1,9 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSkull } from '@fortawesome/free-solid-svg-icons'
 
 function ProductDetails(props){
-  const [risk, setRisk] = useState(0);
   const [highligted, setHighligted] = useState(-1);
   
  
