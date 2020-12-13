@@ -57,13 +57,32 @@ $ npm install react-router-dom
 "password":"Le123"
 }
 ```
+#### Authenticando o usuário
+
+- **endpoint:** `/api-token-auth/`
+- **method:** `POST`
+- **params:** Em Headers passar : Content-Type application/json
+- **200 Response:**
+```json
+   {
+   "email": "LE@gmail.com",
+   "username":"Le123",
+   "password":"Le123"
+}
+```
+- **200 Response**
+```json
+ {
+  "token": "53d8c3c26ad3aec161408627b4a2e83d117eea0"
+}
+```
 
 
 #### Criando um produto
 
 - **endpoint:** `/api/products/`
 - **method:** `POST`
-- **params:** Em Headers Authorization Token <seutoken>
+- **params:** Em Headers Authorization Token <seutoken> Content-Type application/json
 - **200 Response:**
 ```json
    {
