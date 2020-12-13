@@ -1,6 +1,7 @@
 # 📚 Sobre
 Integração entre API Rest com React
 
+## 💻 Instalação
 BACK END
 ````
 $ python -m venv myvenv
@@ -34,3 +35,51 @@ $ npm install --save @fortawesome/react-fontawesome
 $ npm install react-router-dom
 
 ````
+
+## 💻 API Endpoints
+
+
+- **endpoint:** `/users/register/`
+- **method:** `POST`
+- **params:** 
+```json
+{
+"email": "LE@gmail.com",
+"username":"Le123",
+"password":"Le123"
+}
+```
+- **201 Response:**
+```json
+{
+"email": "LE@gmail.com",
+"username":"Le123",
+"password":"Le123"
+}
+```
+
+
+#### Criando um produto
+
+- **endpoint:** `/api/products/`
+- **method:** `POST`
+- **params:** Em Headers Authorization Token <seutoken>
+- **200 Response:**
+```json
+   {
+    "manufacturer": "Singenta3",
+    "name": "Mata grilo",
+    "description": "Produto pra eliminar barata", 		
+    "group": "ORGANOFOSFORADO"
+  }
+```
+- **201 Response**
+```json
+ {
+    "manufacturer": "Singenta3",
+    "name": "Mata grilo",
+    "description": "Produto pra eliminar barata", 		
+    "group": "ORGANOFOSFORADO"
+  }
+```
+
