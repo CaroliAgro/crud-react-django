@@ -127,4 +127,39 @@ $ npm install react-router-dom
   }
 ```
 
+#### Update no produto
+
+- **endpoint:** `/api/products/1/`
+- **method:** `PUT`
+- **params:** Em Headers Authorization Token **seutoken**,  Content-Type application/json
+
+```json
+   {
+    "manufacturer": "Singenta4",
+    "name": "Mata barata voadora",
+    "description": "Produto pra eliminar monstros", 		
+    "group": "ORGANOFOSFORADO"
+  }
+```
+- **200 Response**
+```json
+ {
+  "id": 1,
+  "manufacturer": "Singenta4",
+  "name": "Mata barata voadora",
+  "description": "Produto pra eliminar monstros",
+  "group": "ORGANOFOSFORADO",
+  "risk": 5
+}
+```
+
+#### Deletando o produto
+
+- **endpoint:** `/api/products/1/`
+- **method:** `DELETE`
+- **params:** Em Headers Authorization Token **seutoken**
+
+
+
+
 
