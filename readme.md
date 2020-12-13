@@ -62,7 +62,7 @@ $ npm install react-router-dom
 - **endpoint:** `/api-token-auth/`
 - **method:** `POST`
 - **params:** Em Headers passar : Content-Type application/json
-- **200 Response:**
+
 ```json
    {
    "email": "LE@gmail.com",
@@ -82,8 +82,8 @@ $ npm install react-router-dom
 
 - **endpoint:** `/api/products/`
 - **method:** `POST`
-- **params:** Em Headers Authorization Token <seutoken> Content-Type application/json
-- **200 Response:**
+- **params:** Em Headers Authorization Token **seutoken**,  Content-Type application/json
+
 ```json
    {
     "manufacturer": "Singenta3",
@@ -101,4 +101,30 @@ $ npm install react-router-dom
     "group": "ORGANOFOSFORADO"
   }
 ```
+
+#### listando produtos
+
+- **endpoint:** `/api/products/`
+- **method:** `GET`
+- **params:** Em Headers Authorization Token **seutoken**
+- **200 Response:**
+```json
+    {
+    "id": 1,
+    "manufacturer": "Singenta4",
+    "name": "Mata barata voadora2",
+    "description": "Produto pra eliminar monstros",
+    "group": "ORGANOFOSFORADO",
+   
+  },
+  {
+    "id": 6,
+    "manufacturer": "Singenta",
+    "name": "Pyrinex",
+    "description": "Produto Organofosforado",
+    "group": "ORG",
+    
+  }
+```
+
 
