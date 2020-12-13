@@ -1,5 +1,5 @@
 # 📚 Sobre
-Integração entre API Rest com React
+Integração entre API Rest com Django Framework com React
 
 ## 💻 Instalação
 BACK END
