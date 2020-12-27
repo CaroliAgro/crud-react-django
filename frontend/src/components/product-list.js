@@ -3,9 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { API } from '../api-service'
+import {useCookies} from 'react-cookie'
 
 
 function ProductList(props){
+  const [token] = useCookies(['mr-token'])
 
 
   const productClicked = product => evt => {
@@ -19,7 +21,7 @@ function ProductList(props){
   }
 
   const removeClicked = product => {
-    API.deleteProduct(product.id)
+    API.deleteProduct(product.id, token['mr-token'])
     .then(() => props.removeClicked(product))
     .catch(error => console.log())
     

@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import {API} from '../api-service';
+import {useCookies} from 'react-cookie'
 
 function ProductForm(props){
   const [name, setName] = useState('');
   const [manufacturer, setManufacturer] = useState('')
   const [description, setDescription] = useState('')
   const [group, setGroup] = useState('')
+  const [token] = useCookies(['mr-token'])
   
   useEffect (() =>{
     setName(props.product.name)
@@ -17,7 +19,7 @@ function ProductForm(props){
 
   const  updateCliked = () => {
     console.log('updade aqui')
-    API.updateProduct(props.product.id, {manufacturer, name, description, group })
+    API.updateProduct(props.product.id, {manufacturer, name, description, group }, token['mr-token'])
     .then(resp => props.updateProduct2(resp))
     .catch(error => console.log(error))
 
@@ -25,7 +27,7 @@ function ProductForm(props){
 
   const  createCliked = () => {
     console.log('updade aqui')
-    API.createProduct({manufacturer, name, description, group })
+    API.createProduct({manufacturer, name, description, group }, token['mr-token'])
     .then(resp => props.ProductCreated(resp))
     .catch(error => console.log(error))
 

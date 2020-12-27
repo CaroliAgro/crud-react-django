@@ -3,6 +3,9 @@ import './App.css';
 import ProductList from './components/product-list'
 import ProductDetails from './components/product-detail'
 import ProductForm from './components/form-product'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+import {useCookies} from 'react-cookie';
 
 
 
@@ -10,19 +13,25 @@ function App() {
   const [products, setProducts] = useState([]);
   const [selectedProduct, setselectedProduct] = useState(null);
   const [editedProduct, seteditedProduct] = useState(null);
+  const [token, setToken, deleteToken] = useCookies(['mr-token']);
   useEffect(()=>{
     fetch(
       "http://localhost:8000/api/products/", {
         method:'GET',
         headers:{
           'Content-Type':'application/json',
-          'Authorization': 'Token 7b4b5fd55064659da3276af314d66d08e8dd31a5'
+          'Authorization': `Token ${token['mr-token']}`
         }
       })
       .then(resp => resp.json())
       .then(resp => setProducts(resp))
       .catch(error => console.log(error))
   }, [])
+
+  useEffect (() => {
+    console.log(token);
+    if (!token['mr-token']) window.location.href = '/'
+  }, [token])
 
   
   const loadProduct = product => {
@@ -68,10 +77,16 @@ function App() {
     })
     setProducts(newProducts)
   }
+
+  const logoutUser = () => {
+    deleteToken(['mr-token']);
+  }
   return (
     <div className="App">
       <header className="App-header">
         <h1>Lavoura certa</h1>
+        <FontAwesomeIcon icon={faSignOutAlt} onClick={logoutUser}/>
+        
       </header>
       <div className="layout">
           <div>

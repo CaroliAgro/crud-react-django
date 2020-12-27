@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSkull } from '@fortawesome/free-solid-svg-icons'
+import {useCookies} from 'react-cookie'
 
 function ProductDetails(props){
   const [highligted, setHighligted] = useState(-1);
+  const [token] = useCookies(['mr-token'])
   
  
   
@@ -18,7 +20,7 @@ function ProductDetails(props){
         method:'POST',
         headers:{
           'Content-Type':'application/json',
-          'Authorization': 'Token 7b4b5fd55064659da3276af314d66d08e8dd31a5'
+          'Authorization': `Token ${token['mr-token']}`
         },
         body: JSON.stringify({risk: rate + 1})
       })
@@ -32,7 +34,7 @@ function ProductDetails(props){
         method:'GET',
         headers:{
           'Content-Type':'application/json',
-          'Authorization': 'Token 7b4b5fd55064659da3276af314d66d08e8dd31a5'
+          'Authorization': `Token ${token['mr-token']}`
         },
         
       })
